@@ -215,6 +215,11 @@
             "module": "intelmq.bots.parsers.blocklistde.parser",
             "parameters": {}
         },
+        "Botscout Last Caught": {
+            "description": "Botscout Last Caught Parser is the bot responsible to parse the report and sanitize the information.",
+            "module": "intelmq.bots.parsers.botscout.parser",
+            "parameters": {}
+        },
         "Blueliv Crimeserver": {
             "description": "Blueliv Crimeserver Parser is the bot responsible to parse the report and sanitize the information.",
             "module": "intelmq.bots.parsers.blueliv.parser_crimeserver",

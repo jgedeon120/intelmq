@@ -12,6 +12,7 @@ The available feeds are grouped by the source of the feeds. For each feed the co
 - [BitSight Ciberfeed Stream](#bitsight-ciberfeed-stream)
 - [Blocklist.de](#blocklistde)
 - [Blueliv Crimeserver](#blueliv-crimeserver)
+- [Botscout](#botscout)
 - [CI Army](#ci-army)
 - [CleanMX](#cleanmx)
 - [Cymru](#cymru)
@@ -321,6 +322,17 @@ Collector: Blueliv Crimeserver (`intelmq.bots.collectors.blueliv.collector_crime
 Parser: Blueliv Crimeserver (`intelmq.bots.parsers.blueliv.parser_crimeserver`)
 
 Blueliv Crimeserver Collector is the bot responsible to get the report through the API.
+
+
+## Botscout
+
+Status: Unknown
+
+Collector: Generic URL Fetcher (`intelmq.bots.collectors.http.collector_http`)
+ * http_url: http://botscout.com/last_caught_cache.htm
+
+BotScout helps prevent automated web scripts, known as "bots", from registering on forums, polluting databases, spreading spam, and abusing forms on web sites. We do this by tracking the names, IPs, and email addresses that bots use and logging them as unique signatures for future reference.
+
 
 ## CI Army
 
