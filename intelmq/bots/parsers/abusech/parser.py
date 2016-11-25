@@ -56,9 +56,10 @@ class AbusechParserBot(ParserBot):
                 value = line.split(',')
                 if '|' in value[7]:
                     for ipaddr in value[7].strip('"').split('|'):
-                        new_line = value[0].strip('"') + ',' + value[1].strip('"') + ',' + value[3].strip('"') \
-                                   + ',' + value[4].strip('"') + ',' + value[5].strip('"') + ',' + value[6].strip('"') \
-                                   + ',' + ipaddr + ',' + value[8].strip('"') + ',' + value[9].strip('"')
+                        new_line = \
+                            value[0].strip('"') + ',' + value[1].strip('"') + ',' + value[3].strip('"') \
+                            + ',' + value[4].strip('"') + ',' + value[5].strip('"') + ',' + value[6].strip('"') \
+                            + ',' + ipaddr + ',' + value[8].strip('"') + ',' + value[9].strip('"')
 
                         value = new_line.split(',')
                         event.add('classification.identifier', value[2].lower())
