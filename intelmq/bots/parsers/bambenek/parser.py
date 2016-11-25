@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+""" Single Parser for Bambenek Domain and IP feeds """
 
 import sys
 
@@ -40,7 +41,7 @@ class BambenekParserBot(ParserBot):
             if report['feed.url'] in BambenekParserBot.DGA_FEED:
                 event.add('source.fqdn', value[0])
                 event.add('event_description.text', value[1])
-                event.add('time.source', value[2] + ' UTC')
+                event.add('time.source', value[2] + ' 00:00 UTC')
                 event.add('event_description.url', value[3])
                 event.add('classification.type', 'c&c')
                 event.add('raw', line)
