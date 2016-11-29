@@ -30,7 +30,7 @@ EXAMPLE_EVENT = {"feed.url": "https://palevotracker.abuse.ch/blocklists.php?down
                  }
 
 
-class TestAbusechDomainParserBot(test.BotTestCase, unittest.TestCase):
+class TestAbusechParserBot(test.BotTestCase, unittest.TestCase):
     """ A TestCase for AbusechParserBot with domain file. """
 
     @classmethod

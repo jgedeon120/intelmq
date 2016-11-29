@@ -59,7 +59,7 @@ EXAMPLE_EVENT = [{'feed.url': 'https://ransomwaretracker.abuse.ch/feeds/csv',
                   }]
 
 
-class TestAbuseCHRansomwaretrackerParserBot(test.BotTestCase, unittest.TestCase):
+class TestAbusechParserBot(test.BotTestCase, unittest.TestCase):
     """ A TestCase for AbusechParserBot with ransomware file. """
 
     @classmethod

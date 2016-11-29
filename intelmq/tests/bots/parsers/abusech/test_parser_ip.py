@@ -5,7 +5,7 @@ import unittest
 
 import intelmq.lib.test as test
 import intelmq.lib.utils as utils
-from intelmq.bots.parsers.abusech.parser_ip import AbusechIPParserBot
+from intelmq.bots.parsers.abusech.parser import AbusechParserBot
 
 with open(os.path.join(os.path.dirname(__file__), 'feodoips.txt')) as handle:
     EXAMPLE_FILE = handle.read()
@@ -30,14 +30,12 @@ EXAMPLE_EVENT = {"feed.url": "https://palevotracker.abuse.ch/blocklists.php?down
                  }
 
 
-class TestAbusechIPParserBot(test.BotTestCase, unittest.TestCase):
-    """
-    A TestCase for AbusechIPParserBot.
-    """
+class TestAbusechParserBot(test.BotTestCase, unittest.TestCase):
+    """ A TestCase for AbusechParserBot with IP file. """
 
     @classmethod
     def set_bot(cls):
-        cls.bot_reference = AbusechIPParserBot
+        cls.bot_reference = AbusechParserBot
         cls.default_input_message = EXAMPLE_REPORT
 
     def test_event(self):
