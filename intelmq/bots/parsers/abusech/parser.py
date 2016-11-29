@@ -85,7 +85,7 @@ class AbusechParserBot(ParserBot):
                     if URL.is_valid(value[4]):
                         event.add('source.url', value[4])
 
-        yield event
+            yield event
 
 if __name__ == '__main__':
     bot = AbusechParserBot(sys.argv[1])

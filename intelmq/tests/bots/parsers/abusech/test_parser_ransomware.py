@@ -5,7 +5,7 @@ import unittest
 
 import intelmq.lib.test as test
 import intelmq.lib.utils as utils
-from intelmq.bots.parsers.abusech.parser_ransomware import AbuseCHRansomwaretrackerParserBot
+from intelmq.bots.parsers.abusech.parser import AbusechParserBot
 
 with open(os.path.join(os.path.dirname(__file__), 'ransomwaretracker.csv')) as handle:
     EXAMPLE_FILE = handle.read()
@@ -60,11 +60,11 @@ EXAMPLE_EVENT = [{'feed.url': 'https://ransomwaretracker.abuse.ch/feeds/csv',
 
 
 class TestAbuseCHRansomwaretrackerParserBot(test.BotTestCase, unittest.TestCase):
-    """ A TestCase for AbuseCHRansomwaretrackerParserBot. """
+    """ A TestCase for AbusechParserBot with ransomware file. """
 
     @classmethod
     def set_bot(cls):
-        cls.bot_reference = AbuseCHRansomwaretrackerParserBot
+        cls.bot_reference = AbusechParserBot
         cls.default_input_message = EXAMPLE_REPORT
 
     def test_event(self):

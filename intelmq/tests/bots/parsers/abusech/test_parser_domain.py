@@ -5,7 +5,7 @@ import unittest
 
 import intelmq.lib.test as test
 import intelmq.lib.utils as utils
-from intelmq.bots.parsers.abusech.parser_domain import AbusechDomainParserBot
+from intelmq.bots.parsers.abusech.parser import AbusechParserBot
 
 with open(os.path.join(os.path.dirname(__file__), 'feododomains.txt')) as handle:
     EXAMPLE_FILE = handle.read()
@@ -31,13 +31,11 @@ EXAMPLE_EVENT = {"feed.url": "https://palevotracker.abuse.ch/blocklists.php?down
 
 
 class TestAbusechDomainParserBot(test.BotTestCase, unittest.TestCase):
-    """
-    A TestCase for AbusechDomainParserBot.
-    """
+    """ A TestCase for AbusechParserBot with domain file. """
 
     @classmethod
     def set_bot(cls):
-        cls.bot_reference = AbusechDomainParserBot
+        cls.bot_reference = AbusechParserBot
         cls.default_input_message = EXAMPLE_REPORT
 
     def test_event(self):
