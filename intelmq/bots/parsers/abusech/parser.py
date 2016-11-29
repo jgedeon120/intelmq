@@ -57,9 +57,10 @@ class AbusechParserBot(ParserBot):
                 if '|' in value[7]:
                     for ipaddr in value[7].strip('"').split('|'):
                         new_line = \
-                            value[0].strip('"') + ',' + value[1].strip('"') + ',' + value[3].strip('"') \
-                            + ',' + value[4].strip('"') + ',' + value[5].strip('"') + ',' + value[6].strip('"') \
-                            + ',' + ipaddr + ',' + value[8].strip('"') + ',' + value[9].strip('"')
+                            value[0].strip('"') + ',' + value[1].strip('"') + ',' + value[2].strip('"') \
+                            + ',' + value[3].strip('"') + ',' + value[4].strip('"') + ',' + value[5].strip('"') \
+                            + ',' + value[6].strip('"') + ',' + ipaddr + ',' + value[8].strip('"') + ',' \
+                            + value[9].strip('"')
 
                         value = new_line.split(',')
                         event.add('classification.identifier', value[2].lower())
@@ -73,17 +74,17 @@ class AbusechParserBot(ParserBot):
                         if URL.is_valid(value[4]):
                             event.add('source.url', value[4])
                 else:
-                    event.add('classification.identifier', value[2].lower())
+                    event.add('classification.identifier', value[2].strip('"').lower())
                     event.add('classification.type', 'c&c')
                     event.add('time.source', value[0] + ' UTC')
-                    event.add('status', value[5])
+                    event.add('status', value[5].strip('"'))
                     event.add('raw', line)
-                    if IPAddress.is_valid(value[7]):
-                        event.add('source.ip', value[7])
-                    if FQDN.is_valid(value[3]):
-                        event.add('source.fqdn', value[3])
-                    if URL.is_valid(value[4]):
-                        event.add('source.url', value[4])
+                    if IPAddress.is_valid(value[7].strip('"')):
+                        event.add('source.ip', value[7].strip('"'))
+                    if FQDN.is_valid(value[3].strip('"')):
+                        event.add('source.fqdn', value[3].strip('"'))
+                    if URL.is_valid(value[4].strip('"')):
+                        event.add('source.url', value[4].strip('"'))
 
             yield event
 
