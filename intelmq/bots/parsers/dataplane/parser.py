@@ -67,7 +67,7 @@ class DataplaneParserBot(ParserBot):
 
             if value[4].strip() in DataplaneParserBot.CATEGORY:
                 dict.update(event, DataplaneParserBot.CATEGORY[value[4].strip()])
-                    
+
             else:
                 raise ValueError('Unknown data feed %s' % value[4].strip())
 
